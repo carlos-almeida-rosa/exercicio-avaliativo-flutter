@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       home: Scaffold(
-        appBar: AppBar(title: const Text(appTitle)),
+        appBar: AppBar(title: const Text(appTitle), centerTitle: true,),
         body: const LoginForm(),
       ),
     );
