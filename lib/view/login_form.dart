@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avaliativo/controller/auth_controller.dart';
 import 'package:flutter_avaliativo/view/home_view.dart';
+import 'package:http/http.dart' as http;
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -46,16 +48,12 @@ class LoginFormState extends State<LoginForm> {
               spacing: 10.0,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    // if (_formKey.currentState!.validate()) {
-                    //   ScaffoldMessenger.of(context).showSnackBar(
-                    //     const SnackBar(content: Text('Processind Data')),
-                    //   );
-                    // }
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (context) => const HomeView(),
-                    ),
-                    );
+                  onPressed: () async {
+                    await AuthController.instance.login('aad', 'sadas');
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute<void>(builder: (context) => const HomeView(),
+                    // ),
+                    // );
                   },
                   child: const Text('Entrar'),
                 ),
