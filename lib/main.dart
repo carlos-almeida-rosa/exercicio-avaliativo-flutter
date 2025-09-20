@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_avaliativo/view/login_form.dart';
+import 'package:flutter_avaliativo/views/home_view.dart';
+import 'package:flutter_avaliativo/widgets/login_form_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,13 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'Bem vindo!';
     return MaterialApp(
-      title: appTitle,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(appTitle), centerTitle: true,),
-        body: const LoginForm(),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Exercicio Avaliativo',
+      home: LoginWidget(),
+      routes: {'/home': (context) => HomeView()},
     );
   }
 }
